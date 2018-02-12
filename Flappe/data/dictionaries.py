@@ -1,18 +1,15 @@
+# Import modules
 import pygame
-import public
 import glob
 import os
+import public
 
 # Media Dictionary
-# Loads media into dictionary
+# Uses glob to import media, then stores it in a loop
+
 MEDIA = {}
-image_files = glob.glob(os.path.join(os.path.dirname(__file__), 'media', 'images', '*.png'))
-audio_files = glob.glob(os.path.join(os.path.dirname(__file__), 'media', 'audio', '*.wav'))
+image_files = glob.glob(os.path.join(os.path.dirname(__file__), 'media_files', 'image_files', '*.png'))
 
 for file in image_files:
-	obj = pygame.image.load(file).convert_alpha()
-	MEDIA[os.path.split(file)[-1][:-4]] = obj
-
-for file in audio_files:
-	obj = pygame.mixer.Sound(file)
-	MEDIA[os.path.split(file)[-1][:-4]] = obj
+    obj = pygame.image.load(file).convert_alpha()
+    MEDIA[os.path.split(file)[-1][:-4]] = obj

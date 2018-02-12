@@ -1,11 +1,11 @@
-import pygame
-import sys
-
+# CLIENT 
 if __name__ == '__main__':
-	sys.path.insert(0, './data')
+    import sys
+    import pygame
 
-	import game
+    sys.path.insert(0, './data')
+    import game
 
-	pygame.init()
-	game.title()
-	pygame.quit()
+    pygame.init()
+    game.main()
+    pygame.quit()
